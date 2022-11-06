@@ -1,5 +1,5 @@
 import React from "react";
-import { json, Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginImage from "../../assets/images/login/login.svg";
 import GoogleIcon from "../../assets/icons/icons8-google-48.png";
 import FacebookIcon from "../../assets/icons/icons8-facebook-48.png";
