@@ -10,11 +10,14 @@ const Orders = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/orders?email=${user?.email}`, {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("geniusToken")}`,
-      },
-    })
+    fetch(
+      `https://genius-car-server-with-jwt-by-mezan.vercel.app/orders?email=${user?.email}`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("geniusToken")}`,
+        },
+      }
+    )
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
           return logOut();
@@ -29,12 +32,15 @@ const Orders = () => {
       "Are You Sure Do You Want to Cancel this Order"
     );
     if (proceed) {
-      fetch(`http://localhost:5000/orders/${id}`, {
-        method: "DELETE",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("geniusToken")}`,
-        },
-      })
+      fetch(
+        `https://genius-car-server-with-jwt-by-mezan.vercel.app/orders/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("geniusToken")}`,
+          },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
@@ -49,14 +55,17 @@ const Orders = () => {
   };
 
   const handleStatusUpdate = (id) => {
-    fetch(`http://localhost:5000/orders/${id}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("geniusToken")}`,
-      },
-      body: JSON.stringify({ status: "Approved" }),
-    })
+    fetch(
+      `https://genius-car-server-with-jwt-by-mezan.vercel.app/orders/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("geniusToken")}`,
+        },
+        body: JSON.stringify({ status: "Approved" }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount) {

@@ -21,14 +21,20 @@ const SliderItems = ({ carousel }) => {
         </p>
       </div>
       <div className="absolute text-white flex justify-start transform -translate-y-1/2 left-20 top-3/4">
-        <button className="btn btn-error mr-5">Error</button>
-        <button className="btn btn-outline btn-error">Error</button>
+        <button className="btn btn-error mr-5 text-white">Get Started</button>
+        <button className="btn btn-outline btn-error">More Info</button>
       </div>
       <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
-        <a href={`#slide${pre}`} className="btn btn-circle mr-5">
+        <a
+          href={`#slide${pre}`}
+          className="btn btn-circle btn-ghost border-white text-white mr-5"
+        >
           ❮
         </a>
-        <a href={`#slide${next}`} className="btn btn-circle">
+        <a
+          href={`#slide${next}`}
+          className="btn btn-circle btn-ghost border-white text-white"
+        >
           ❯
         </a>
       </div>

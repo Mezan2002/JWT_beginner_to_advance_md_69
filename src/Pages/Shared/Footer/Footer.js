@@ -1,9 +1,10 @@
 import React from "react";
 import logo from "../../../assets/logo.svg";
+import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer w-full p-32 bg-black text-white">
+    <footer className="footer p-32 bg-black text-white">
       <div>
         <img src={logo} alt="" />
         <p>

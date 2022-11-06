@@ -26,7 +26,7 @@ const CheckOut = () => {
       message,
     };
 
-    fetch("http://localhost:5000/orders", {
+    fetch("https://genius-car-server-with-jwt-by-mezan.vercel.app/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
